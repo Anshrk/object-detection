@@ -1,6 +1,5 @@
 // Import dependencies
-import React, { useRef, useState, useEffect } from "react";
-import * as tf from "@tensorflow/tfjs";
+import React, { useRef, useEffect } from "react";
 import * as cocossd from "@tensorflow-models/coco-ssd";
 
 import Webcam from "react-webcam";
@@ -11,13 +10,6 @@ function App() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
-  const runCoco = async () => {
-    // cocoss.load() reads the web cam
-    const net = await cocossd.load();
-    setInterval(() => {
-      detect(net);
-    }, 10);
-  };
 
   const detect = async (net) => {
     if (
@@ -50,7 +42,18 @@ function App() {
     }
   };
 
-  useEffect(()=>{runCoco()},[]);
+  useEffect(()=>{
+    const runCoco = async () => {
+      // cocoss.load() reads the web cam
+      const net = await cocossd.load();
+      setInterval(() => {
+        detect(net);
+      }, 10);
+    };
+    runCoco();
+
+  },[]);
+  // useEffect(()=>{runCoco()},[]);
 
   return (
     <div className="App">
