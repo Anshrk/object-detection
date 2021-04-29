@@ -7,6 +7,7 @@ import * as cocossd from "@tensorflow-models/coco-ssd";
 import Webcam from "react-webcam";
 import "./App.css";
 import {drawRect} from "./draw";
+import githubIM from "./assets/github.svg";
 
 function App() {
   const webcamRef = useRef(null);
@@ -55,43 +56,26 @@ function App() {
     runCoco();
 
   },[]);
-  // useEffect(()=>{runCoco()},[]);
 
   return (
+    <>
+    <h1 id="header">Object Detection</h1>
     <div className="App">
       <header className="App-header">
-        <Webcam
+        <Webcam id="webcam"
           ref={webcamRef}
           muted={true} 
-          style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zindex: 9,
-            width: 640,
-            height: 480,
-          }}
         />
 
-        <canvas
+        <canvas id="canvas"
           ref={canvasRef}
-          style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zindex: 8,
-            width: 640,
-            height: 480,
-          }}
         />
       </header>
     </div>
+    <div id="footer">
+      <p>Made by <a href="https://github.com/anshrk">Ansh Kashyap</a>, source code availabe <a href="https://github.com/anshrk/object-detection">here</a></p><a href="https://github.com/anshrk/object-detection"><img src={githubIM} alt="Github Logo" /></a>
+    </div>
+    </>
   );
 }
 
