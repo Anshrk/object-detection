@@ -73,7 +73,14 @@ function App() {
       </header>
     </div>
     <div id="footer">
-      <p>Made by <a href="https://github.com/anshrk">Ansh Kashyap</a>, source code availabe <a href="https://github.com/anshrk/object-detection">here</a></p><a href="https://github.com/anshrk/object-detection"><img src={githubIM} alt="Github Logo" /></a>
+      <p>Made by&nbsp;
+        <a href="https://github.com/anshrk">Ansh Kashyap</a>
+        , source code availabe <a href="https://github.com/anshrk/object-detection">
+          here
+        </a>
+      </p>
+      &nbsp;
+      <div className="github-icon-div"><img src={githubIM} alt="Github Logo" /></div>
     </div>
     </>
   );
