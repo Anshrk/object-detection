@@ -72,7 +72,7 @@ function App() {
         />
       </header>
     </div>
-    <div id="footer">
+    {/* <div id="footer">
       <p>Made by&nbsp;
         <a href="https://github.com/anshrk">Ansh Kashyap</a>
         , source code availabe <a href="https://github.com/anshrk/object-detection">
@@ -81,7 +81,7 @@ function App() {
       </p>
       &nbsp;
       <div className="github-icon-div"><img src={githubIM} alt="Github Logo" /></div>
-    </div>
+    </div> */}
     </>
   );
 }
